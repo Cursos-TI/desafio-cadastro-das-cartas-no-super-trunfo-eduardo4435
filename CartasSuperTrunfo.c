@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void limpar_entrada() {
-    char c;
-    while ((c = getchar()) != '\n' && c != EOF) {}
- }
-
 
 int main() {
     char estado;
@@ -23,8 +18,7 @@ int main() {
     scanf("%s", codigoDaCarta);
     printf("Nome da Cidade: ");
     getchar();
-    fgets(nomeDaCidade, sizeof(nomeDaCidade), stdin);
-    nomeDaCidade[strcspn(nomeDaCidade, "\n")] = '\0';
+    fgets(nomeDaCidade, 50, stdin);
     printf("População: ");
     scanf("%d", &populacao);
     printf("Área (em km²): ");
@@ -34,7 +28,14 @@ int main() {
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos);
 
-    
+    printf("\nCarta 1: \n");
+    printf("Estado: %c\n", estado);
+    printf("Codigo da carta: %s\n", codigoDaCarta);
+    printf("Nome da cidade: %s", nomeDaCidade);
+    printf("População: %d\n", populacao);
+    printf("Area: %.2f\n", area);
+    printf("PIB: %.2f\n", pib);
+    printf("Numero de pontos turisticos: %d\n", pontosTuristicos);
 
     return 0;
 }
